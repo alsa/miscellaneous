@@ -83,19 +83,13 @@ function buildPopup(gameDiv, urlValue) {
                        padding:20px;\
                        font-size:13px;\
                        text-align:left;\
-                       z-index:501;\
-                       .btn {\
-                         background-color:green;\
-                       }";
-    d.innerHTML = "<h1>\
-                   <a style='font-size:16pt;color:blue;text-decoration: none;'> Google Maps: </a>\
-                   <a style='font-size:16pt;color:black;text-decoration: none;'> Hex-ID Converter </a>\
-                   </h1>\
-                   <button style='position:absolute;top:0;right:0;height:20px;width:20px'>X</button></br>\
-                   <textarea rows='3' cols='55'></textarea><p>\
-                   <div style='text-align:right; color:gray;'></div>\
-                   <button class='btn' style='float: right;'>Copy to clipboard</button>\
-                   <button class='btn' style='float: left;'>Open URL</button>";
+                       z-index:501;";
+    d.innerHTML = "<h1><a style='font-size:16pt;color:blue;text-decoration: none;'> Google Maps: </a>\
+                   <a style='font-size:16pt;color:black;text-decoration: none;'> URL extractor </a></h1>\
+                   <button style='position:absolute;top:0;right:0;height:20px;width:20px'>X</button>\
+                   </br></br><textarea rows='3' cols='55'></textarea></br></br>\
+                   <button style='float: right;'>Copy to clipboard</button>\
+                   <button style='float: left;'>Open URL</button>";
 
     gameDiv.appendChild(d);
 
@@ -129,7 +123,7 @@ function main() {
     var googleId = currentUrl.match(":0x([a-f0-9]+)");
 
     if (googleId) {
-        var gameDiv, checkInterval, stickyNodes, popup;
+        var gameDiv, popup;
         gameDiv = document.createElement("div");
         gameDiv.khIgnore = true;
         document.body.appendChild(gameDiv);
