@@ -120,7 +120,7 @@ function buildPopup(gameDiv, urlValue) {
 
 function main() {
     var currentUrl = window.location.href;
-    var googleId = currentUrl.match(":0x([a-f0-9]+)");
+    var googleId = currentUrl.match(".*:0x([a-f0-9]{12,})"); // extract last occurence;
 
     if (googleId) {
         var gameDiv, popup;
